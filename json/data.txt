@@ -1,0 +1,1 @@
+{"response":{"code":"0","msg":"Sucess","dext":""},"data":{"0":{"url":"http:\/\/2014.qq.com\/a\/20140514\/015589.htm","cltitle":"高清：巴西世界杯热身赛 德国0-0闷平波兰"},"site":"2014","column":"ger"}}

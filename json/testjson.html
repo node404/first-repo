@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>test json</title>
+
+<script src="js/jquery.js"></script>    
+
+<script type="text/javascript">
+var json;
+   $(document).ready( $(function(){       
+   
+		 var url ="data.txt";
+
+	    //url = "http://api.flickr.com/services/feeds/photos_public.gne?tags=cat&tagmode=any&format=json&jsoncallback=?";
+		//url = "http://c.open.qq.com/i/multi/multi_article.php?project_name=cdujbzkpyavntwb&oe=UTF-8&of=json&level=1&site=2014&column=ger";
+		
+        $.getJSON(url, function(dd){
+				
+				//alert(dd);
+                $(dd.response).each(function(i, ite){
+				//alert(dd);
+						if(i==0){
+							$(".code").html("code:"+ite.code);
+							$(".msg").html("msg:"+ite.msg);
+							$(".dext").html("dext:"+ite.dext);
+						}
+                });
+				
+				$(dd.data).each(function(i, ite){
+						$(".site").html("site:"+ite.site);
+						$(ite[0]).each(function (j, jte){
+							$(".url").html("url:"+jte.url);
+						});
+				});
+        })
+  })
+)
+</script>
+
+</head>
+<body >
+<h2>test json</h2>
+<div class="main">
+    <div class="ginfo" id="ginfo">    
+        <p class="code"></p>
+		<p class="msg"></p>
+		<p class="dext"></p>
+		<p class="url"></p>
+		<p class="site"></p>
+   </div>
+   <ul>       
+   </ul>
+</div>  
+
+</body>
+</html>
